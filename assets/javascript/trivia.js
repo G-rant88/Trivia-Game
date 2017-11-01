@@ -1,55 +1,62 @@
 var number = 30;
 var intervalId;
 var timer = false;
-var alist = [];
 
 
-alist.push("Hedwig");
-alist.push("Scabbers");
-alist.push("Buckbeak");
-alist.push("Fluffy");
+zero = [
+"Hedwig", "Scabbers", "Buckbeak", "Fluffy"
 
-alist.push("Answer2 HERE1");
-alist.push("Answer HERE2");
-alist.push("Answer HERE3");
-alist.push("Answer HERE4");
+];
 
-alist.push("Answer3 HERE1");
-alist.push("Answer HERE2");
-alist.push("Answer HERE3");
-alist.push("Answer HERE4");
+one = [
+"Stag", "Terrier", "Otter", "Dragon"
+];
 
-alist.push("Answer4 HERE1");
-alist.push("Answer HERE2");
-alist.push("Answer HERE3");
-alist.push("Answer HERE4");
+two = [
+  "Snake", "Badger", "House Elf", "Owl"
+];
 
-alist.push("Answer5 HERE1");
-alist.push("Answer HERE2");
-alist.push("Answer HERE3");
-alist.push("Answer HERE4");
+// alist.push("Answer4 HERE1");
+// alist.push("Answer HERE2");
+// alist.push("Answer HERE3");
+// alist.push("Answer HERE4");
+
+// alist.push("Answer5 HERE1");
+// alist.push("Answer HERE2");
+// alist.push("Answer HERE3");
+// alist.push("Answer HERE4");
+var alist =
+  [zero, one, two];
+
 
 
 
 var qlist = [];
 
 qlist.push("<h3>What is the name of Harry's pet owl?</h3");
-qlist.push("<h3>Question HERE2!</h3");
-qlist.push("<h3>Question HERE3!</h3");
-qlist.push("<h3>Question HERE4!</h3");
-qlist.push("<h3>Question HERE5!</h3");
+qlist.push("<h3>Hermione's patronus is in the form of which animal?</h3");
+qlist.push("<h3>What is the symbol of the Hufflepuff House?</h3");
+qlist.push("<h3></h3");
+qlist.push("<h3></h3");
 
 
-var imgs = ["assets/images/hp1.jpg", "assets/images/hp1.jpg"];
+var imgs = ["assets/images/hp1.jpg", "assets/images/hp2.jpg"];
+
+
 
 function ask (i){
   
 
-        $(".quest").append(qlist[i]);
-        $("#answer1").val(alist[i]);
-        $("#answer2").val(alist[i + 1]);
-        $("#answer3").val(alist[i + 2]);
-        $("#answer4").val(alist[i + 3]);
+        $(".quest").html(qlist[i]);
+        $("#answer1").val(alist[i][0]);
+        $("#answer2").val(alist[i][1]);
+        $("#answer3").val(alist[i][2]);
+        $("#answer4").val(alist[i][3]);
+        $(".buts").css("display", "block");
+        $("#imgholder").css("display", "none");
+         $(".right").html("");
+         $("#show-number").css("display", "inline");
+         reset();
 
 }
 
@@ -97,11 +104,13 @@ function ask (i){
 
 function answer (){
 
-$(".quest").html("The Correct Answer Was: " + (alist[0]));
+ $("#imgholder").css("display", "block");
+$(".quest").html("<h3>The Correct Answer Was: " + (alist[0][0]) + "</h3>");
 $(".buts").css("display", "none");
-$("#imgholder").html("<img src='assets/images/hp1.jpg'/>");
+$("#imgholder").html("<img src=" + (imgs[0]) + ">");
 stop();
 $("#show-number").css("display", "none");
+
 
 }
 
@@ -122,33 +131,18 @@ else {
 }
 
 
+var five = setTimeout(fiveSeconds, 5000)
+
+function fiveSeconds(){
+
+ask(1);
+
+};
+
+
 });
 
+function reset (){
 
-
- // var items = [];
-
- //   $.each(data, function(i, item) {
-
- //          items.push('<li><a href="yourlink?id=' + item.UserID + '">' + item.Username + '</a></li>');
-
- //   });
-
-
-
-    // $("#stop").on("click", stop);
-
-    // $("#resume").on("click", run);
-
-   
-
-    
-
-         
-
-
-    //   }
-    // }
-
-    
-    // run();
+  number = 30;
+}
