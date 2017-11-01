@@ -30,7 +30,7 @@ var alist =
 
 
 
-
+var answers = ["Hedwig", "Otter", "Badger"]
 var qlist = [];
 
 qlist.push("<h3>What is the name of Harry's pet owl?</h3");
@@ -102,23 +102,20 @@ function ask (i){
 
 }
 
-function answer (){
 
+ 
+
+
+ // for (var i = 0; i < 1; i++) {
+$(".buts").on("click", function(){
+ 
  $("#imgholder").css("display", "block");
-$(".quest").html("<h3>The Correct Answer Was: " + (alist[0][0]) + "</h3>");
+$(".quest").html("<h3>The Correct Answer Was: " + answers[0] + "</h3>");
 $(".buts").css("display", "none");
 $("#imgholder").html("<img src=" + (imgs[0]) + ">");
 stop();
 $("#show-number").css("display", "none");
-
-
-}
-
-$(".buts").click(answer);
-
-$(".buts").on("click", function(){
-
-if ($(this).attr("id") === "answer1"){
+if ($(this).attr("value") === answers[0]){
 
 $(".right").html("You were Correct!");
 
@@ -131,6 +128,15 @@ else {
 }
 
 
+
+
+  });
+
+   // }
+ 
+
+
+
 var five = setTimeout(fiveSeconds, 5000)
 
 function fiveSeconds(){
@@ -140,7 +146,7 @@ ask(1);
 };
 
 
-});
+
 
 function reset (){
 
