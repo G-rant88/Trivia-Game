@@ -1,3 +1,4 @@
+
 .container {
 
 	text-align: center;
@@ -51,9 +52,9 @@ height: 550px;
 margin-top: 40px;
 
 
-}*/
+}
 
-#restart 
+#restart {
 
 
 	
@@ -62,8 +63,20 @@ margin-top: 40px;
 	width: 25%;
 }
 
-h1 {
+#title {
 
+	font-size: 50px;
 	font-family: 'Sedgwick Ave Display', cursive;
+	color: black;
+	text-shadow: 2px 2px gray;
 }
 
+.quest  {
+
+	font-family: 'Caveat Brush', cursive;
+	color: black;
+	font-size: 40px;
+	text-shadow: 2px 2px gray;
+}
+
+/*.right .right2 .right3*/
