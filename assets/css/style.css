@@ -69,9 +69,10 @@ margin-top: 40px;
 	font-family: 'Sedgwick Ave Display', cursive;
 	color: black;
 	text-shadow: 2px 2px gray;
+	margin-top: 35px;
 }
 
-.quest  {
+h2, h3, .right, .right2, .right3  {
 
 	font-family: 'Caveat Brush', cursive;
 	color: black;
