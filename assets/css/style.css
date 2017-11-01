@@ -17,7 +17,9 @@
 	display: none;
 	margin: 0 auto;
 	text-align: center;
-	width: 100%;
+	width: 90%;
+	font-size: 25px;
+	font-family: 'Gloria Hallelujah', cursive;
 }
 
 #start {
@@ -27,11 +29,12 @@
 
 img {
 
-	width: 550px;
-	height: 400px;
+	width: 450px;
+	height: 300px;
+	border: 2px solid gray;
 }
 
-/*body {
+body {
 
 	background-image: url("../images/hpbg.jpg");
 	height: 100%;
@@ -41,16 +44,26 @@ img {
 .container {
 
 border: 2px solid gray;
-background-color: white;
-height: 90%;
+background-image: url("../images/bg2.jpg");
+  background-size: 1170px 550px;
+   background-repeat: no-repeat;
+height: 550px;
+margin-top: 40px;
+
 
 }*/
 
-#restart {
+#restart 
+
 
 	
-	display: none;
-	margin: 0 auto;
-	text-align: center;
+	/*display: none;*/
+	margin-right:0; 
 	width: 25%;
 }
+
+h1 {
+
+	font-family: 'Sedgwick Ave Display', cursive;
+}
+

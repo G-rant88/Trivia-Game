@@ -79,6 +79,7 @@ var ucount = 0;
 function ask (f){
 
   if (i === qlist.length){
+    $("#restart").css("display", "inline");
 $(".right3").css("display", "inline");
 $(".quest").html("<h3>Quiz Complete! Here's how you did: </h3>");
  $(".right").text("You got " + wcount + " questions right!");
@@ -87,7 +88,7 @@ $(".quest").html("<h3>Quiz Complete! Here's how you did: </h3>");
 $(".buts").css("display", "none");
 $("#show-number").css("display", "none");
 $("#imgholder").css("display", "none");
-$("#restart").css("display", "block");
+
 
 
 }
