@@ -16,37 +16,55 @@ two = [
   "Snake", "Badger", "House Elf", "Owl"
 ];
 
-// alist.push("Answer4 HERE1");
-// alist.push("Answer HERE2");
-// alist.push("Answer HERE3");
-// alist.push("Answer HERE4");
+three = [
 
-// alist.push("Answer5 HERE1");
-// alist.push("Answer HERE2");
-// alist.push("Answer HERE3");
-// alist.push("Answer HERE4");
+"Four", "Six", "Three", "Five"
+];
+
+four = [
+
+"The Bloody Baron", "The Fat Lady", "Nearly-headless Nick", "Dobby"
+
+]
+
+five = [
+
+"Muggle", "Bleaker", "Squib", "Quibble"
+
+]
+
+six = [
+
+"Seeker", "Beater", "Chaser", "Keeper"
+
+]
+
 var alist =
-  [zero, one, two];
+  [zero, one, two, three, four, five, six];
 
 
 
-var answers = ["Hedwig", "Otter", "Badger"]
+var answers = ["Hedwig", "Otter", "Badger", "Five", "The Fat Lady", "Squib", "Keeper"]
 var qlist = [];
 
 qlist.push("<h3>What is the name of Harry's pet owl?</h3");
 qlist.push("<h3>Hermione's patronus is in the form of which animal?</h3");
 qlist.push("<h3>What is the symbol of the Hufflepuff House?</h3");
-qlist.push("<h3></h3");
-qlist.push("<h3></h3");
+qlist.push("<h3>Ron has how many brothers?</h3");
+qlist.push("<h3>Who guards the entrance to the Gryffindor Common Room?</h3");
+qlist.push("<h3>A wizard who cannot do magic is known as a?</h3");
+qlist.push("<h3>Ron plays which position in Quidditch?</h3");
 
 
-var imgs = ["assets/images/hp1.jpg", "assets/images/hp2.jpg"];
+var imgs = ["assets/images/hp1.jpg", "assets/images/hp2.jpg", "assets/images/hp3.jpg", 
+"assets/images/hp4.jpg", "assets/images/hp5.jpg", "assets/images/hp6.jpg", 
+"assets/images/hp7.jpg"];
 
+var f = 0;
 
-
-function ask (i){
+function ask (f){
   
-
+        reset();
         $(".quest").html(qlist[i]);
         $("#answer1").val(alist[i][0]);
         $("#answer2").val(alist[i][1]);
@@ -56,7 +74,10 @@ function ask (i){
         $("#imgholder").css("display", "none");
          $(".right").html("");
          $("#show-number").css("display", "inline");
-         reset();
+          $("#start").css("display", "none");
+        $("#show-number").html("<h2>" + number + "</h2>");
+        
+         f++
 
 }
 
@@ -68,15 +89,13 @@ function ask (i){
  function run() {
        intervalId = setInterval(decrement, 1000);
         timer = true;
-        $(".buts").css("display", "block");
-        ask(0)
+        ask(f)
         
 
 
 
 
-        $("#start").css("display", "none");
-        $("#show-number").html("<h2>" + number + "</h2>");
+       
 
 
      }
@@ -98,35 +117,56 @@ function ask (i){
     clearInterval(intervalId);
      }
 
+
+
+
+
+
+
+
+
+
+
 }
 
 }
 
 
  
-
+ var i = 0
 
  // for (var i = 0; i < 1; i++) {
 $(".buts").on("click", function(){
- 
+stop();
  $("#imgholder").css("display", "block");
-$(".quest").html("<h3>The Correct Answer Was: " + answers[0] + "</h3>");
+$(".quest").html("<h3>The Correct Answer Was: " + answers[i] + "</h3>");
 $(".buts").css("display", "none");
-$("#imgholder").html("<img src=" + (imgs[0]) + ">");
+$("#imgholder").html("<img src=" + (imgs[i]) + ">");
 stop();
 $("#show-number").css("display", "none");
-if ($(this).attr("value") === answers[0]){
+if ($(this).attr("value") === answers[i]){
 
 $(".right").html("You were Correct!");
+i++;
+
 
 }
 
 else {
 
   $(".right").html("You were Wrong!");
+  i++
+  
 
 }
 
+var five = setTimeout(fiveSeconds, 5000)
+
+function fiveSeconds(){
+
+ask(f);
+
+};
 
 
 
@@ -137,13 +177,7 @@ else {
 
 
 
-var five = setTimeout(fiveSeconds, 5000)
 
-function fiveSeconds(){
-
-ask(1);
-
-};
 
 
 
