@@ -2,6 +2,11 @@ var number = 30;
 var intervalId;
 var timer = false;
 
+function reset (){
+
+  number = 30;
+}
+
 
 zero = [
 "Hedwig", "Scabbers", "Buckbeak", "Fluffy"
@@ -61,9 +66,28 @@ var imgs = ["assets/images/hp1.jpg", "assets/images/hp2.jpg", "assets/images/hp3
 "assets/images/hp7.jpg"];
 
 var f = 0;
+var wcount = 0;
+var lcount = 0;
+
+
+
 
 function ask (f){
+
+  if (i === 7){
+
+$(".quest").html("<h3>Quiz Complete! Here's how you did: </h3>");
+ $(".right").text("You got " + wcount + " questions right!");
+ $(".right2").text("You got " + lcount + " questions wrong!");
+$(".buts").css("display", "none");
+$("#show-number").css("display", "none");
+$("#imgholder").css("display", "none");
+
+
+}
   
+ else {
+
         reset();
         $(".quest").html(qlist[i]);
         $("#answer1").val(alist[i][0]);
@@ -78,7 +102,7 @@ function ask (f){
         $("#show-number").html("<h2>" + number + "</h2>");
         
          f++
-
+}
 }
 
 
@@ -144,10 +168,12 @@ $(".buts").css("display", "none");
 $("#imgholder").html("<img src=" + (imgs[i]) + ">");
 stop();
 $("#show-number").css("display", "none");
+
 if ($(this).attr("value") === answers[i]){
 
 $(".right").html("You were Correct!");
 i++;
+wcount++;
 
 
 }
@@ -155,7 +181,8 @@ i++;
 else {
 
   $(".right").html("You were Wrong!");
-  i++
+  i++;
+  lcount++;
   
 
 }
@@ -166,23 +193,9 @@ function fiveSeconds(){
 
 ask(f);
 
-};
-
-
-
-  });
-
-   // }
- 
-
-
-
-
-
-
-
-
-function reset (){
-
-  number = 30;
 }
+
+
+
+  })
+
