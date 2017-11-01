@@ -1,0 +1,21 @@
+.container {
+
+	text-align: center;
+	margin: 0 auto;
+}
+
+.container {
+
+	list-style-type: none;
+	padding-left: 0;
+	line-height: 60px;
+}
+
+.buts {
+
+	background-color: white;
+	display: none;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
