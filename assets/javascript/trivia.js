@@ -68,20 +68,26 @@ var imgs = ["assets/images/hp1.jpg", "assets/images/hp2.jpg", "assets/images/hp3
 var f = 0;
 var wcount = 0;
 var lcount = 0;
+var ucount = 0;
 
 
+
+  $("#restart").css("display", "none");
+   $(".right3").css("display", "none");
 
 
 function ask (f){
 
-  if (i === 7){
-
+  if (i === qlist.length){
+$(".right3").css("display", "inline");
 $(".quest").html("<h3>Quiz Complete! Here's how you did: </h3>");
  $(".right").text("You got " + wcount + " questions right!");
  $(".right2").text("You got " + lcount + " questions wrong!");
+ $(".right3").text("You had " + ucount + " questions unanswered!");
 $(".buts").css("display", "none");
 $("#show-number").css("display", "none");
 $("#imgholder").css("display", "none");
+$("#restart").css("display", "block");
 
 
 }
@@ -97,11 +103,14 @@ $("#imgholder").css("display", "none");
         $(".buts").css("display", "block");
         $("#imgholder").css("display", "none");
          $(".right").html("");
+         $(".right2").html("");
+          $(".right3").html("");
          $("#show-number").css("display", "inline");
           $("#start").css("display", "none");
-        $("#show-number").html("<h2>" + number + "</h2>");
+        $("#show-number").html("<h2> Time Left: " + number + "</h2>");
+        $("#restart").css("display", "none");
         
-         f++
+         f++;
 }
 }
 
@@ -114,6 +123,8 @@ $("#imgholder").css("display", "none");
        intervalId = setInterval(decrement, 1000);
         timer = true;
         ask(f)
+        $("#show-number").html("<h2> Time Left: 30</h2>");
+        $("#restart").css("display", "none");
         
 
 
@@ -129,28 +140,42 @@ $("#imgholder").css("display", "none");
 
      
        number--;
- $("#show-number").html("<h2>" + number + "</h2>");
+ $("#show-number").html("<h2> Time Left: " + number + "</h2>");
        
 
        if (number === 0) {
 
-        stop();
+$("#imgholder").css("display", "block");
+$(".quest").html("<h3>The Correct Answer Was: " + answers[i] + "</h3>");
+$(".buts").css("display", "none");
+$("#imgholder").html("<img src=" + (imgs[i]) + ">");
+stop();
+$("#show-number").css("display", "none");
+$(".right3").css("display", "inline");
+$(".right3").html("Times up!");
+i++;
+ ucount++;
+  
+
+var five = setTimeout(fiveSeconds, 5000)
+
+function fiveSeconds(){
+
+ask(f);
+
+run();
+
+}
+
+
+
 
  function stop() {
   timer = false;
     clearInterval(intervalId);
      }
 
-
-
-
-
-
-
-
-
-
-
+        stop();
 }
 
 }
@@ -174,12 +199,15 @@ if ($(this).attr("value") === answers[i]){
 $(".right").html("You were Correct!");
 i++;
 wcount++;
+$("#restart").css("display", "none");
 
 
 }
 
 else {
 
+
+  $("#restart").css("display", "none");
   $(".right").html("You were Wrong!");
   i++;
   lcount++;
@@ -199,3 +227,12 @@ ask(f);
 
   })
 
+function restart (){
+
+i = 0;
+f = 0;
+ask(f);
+
+}
+
+$("#restart").click(restart);
