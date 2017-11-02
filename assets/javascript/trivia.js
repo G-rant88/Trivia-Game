@@ -90,6 +90,7 @@ $(".quest").html("<h3>Quiz Complete! Here's how you did: </h3>");
 $(".buts").css("display", "none");
 $("#show-number").css("display", "none");
 $("#imgholder").css("display", "none");
+number = 900;
 stop();
 
 
@@ -164,9 +165,12 @@ var five = setTimeout(fiveSeconds, 5000)
 
 function fiveSeconds(){
 
-ask(f);
+
 
 run();
+
+ask(f);
+
 
 }
 
