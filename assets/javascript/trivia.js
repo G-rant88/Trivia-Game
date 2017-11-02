@@ -1,6 +1,6 @@
 var number = 30;
-var intervalId;
-var timer = false;
+var num;
+// var timer = false;
 
 function reset (){
 
@@ -91,6 +91,10 @@ $(".buts").css("display", "none");
 $("#show-number").css("display", "none");
 $("#imgholder").css("display", "none");
 number = 900;
+function stop() {
+  //timer = false;
+    clearInterval(num);
+     }
 stop();
 
 
@@ -120,12 +124,11 @@ stop();
 
 
 
-
  $("#start").on("click", run);
 
  function run() {
-       intervalId = setInterval(decrement, 1000);
-        timer = true;
+       num = setInterval(decrement, 1000);
+        // timer = true;
         ask(f)
         $("#show-number").html("<h2> Time Left: 30</h2>");
         $("#restart").css("display", "none");
@@ -177,10 +180,7 @@ ask(f);
 
 
 
- function stop() {
-  timer = false;
-    clearInterval(intervalId);
-     }
+ 
 
         stop();
 }
@@ -242,6 +242,7 @@ wcount = 0;
 lcount = 0;
 ucount = 0;
 ask(f);
+run();
 $("#restart").css("display", "none");
 }
 
