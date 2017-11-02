@@ -23,6 +23,12 @@
 	font-family: 'Gloria Hallelujah', cursive;
 }
 
+.buts:hover {
+
+	background-color: darkred;
+	color: yellow;
+}
+
 #start {
 	color: black;
 	width: 25%;
@@ -30,6 +36,20 @@
 	font-family: 'Caveat Brush', cursive;
 	font-size: 30px;
 
+}
+
+#start:hover {
+
+background-color: darkred;
+	color: yellow;
+
+}
+
+#restart:hover {
+
+background-color: darkred;
+	color: yellow;
+	
 }
 
 img {
