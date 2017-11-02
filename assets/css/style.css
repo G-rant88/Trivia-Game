@@ -13,7 +13,7 @@
 }
 
 .buts {
-
+	color: black;
 	background-color: white;
 	display: none;
 	margin: 0 auto;
@@ -24,7 +24,7 @@
 }
 
 #start {
-
+	color: black;
 	width: 25%;
 	background-color: white;
 	font-family: 'Caveat Brush', cursive;
@@ -59,7 +59,7 @@ margin-top: 40px;
 }
 
 #restart {
-
+	color: black;
 	margin-right:0; 
 	width: 25%;
 	background-color: white;
@@ -83,4 +83,10 @@ h2, h3, .right, .right2, .right3  {
 	color: black;
 	font-size: 40px;
 	text-shadow: 2px 2px gray;
+}
+
+
+.btn {
+
+	color: black;
 }
