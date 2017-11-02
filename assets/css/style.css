@@ -26,6 +26,10 @@
 #start {
 
 	width: 25%;
+	background-color: white;
+	font-family: 'Caveat Brush', cursive;
+	font-size: 30px;
+
 }
 
 img {
@@ -46,8 +50,8 @@ body {
 
 border: 2px solid gray;
 background-image: url("../images/bg2.jpg");
-  background-size: 1170px 550px;
-   background-repeat: no-repeat;
+ background-size: 1170px 550px;
+ background-repeat: no-repeat;
 height: 550px;
 margin-top: 40px;
 
@@ -56,11 +60,12 @@ margin-top: 40px;
 
 #restart {
 
-
-	
-	/*display: none;*/
 	margin-right:0; 
 	width: 25%;
+	background-color: white;
+	font-family: 'Caveat Brush', cursive;
+	font-size: 30px;
+
 }
 
 #title {
@@ -79,5 +84,3 @@ h2, h3, .right, .right2, .right3  {
 	font-size: 40px;
 	text-shadow: 2px 2px gray;
 }
-
-/*.right .right2 .right3*/

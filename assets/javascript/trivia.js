@@ -65,29 +65,32 @@ var imgs = ["assets/images/hp1.jpg", "assets/images/hp2.jpg", "assets/images/hp3
 "assets/images/hp4.jpg", "assets/images/hp5.jpg", "assets/images/hp6.jpg", 
 "assets/images/hp7.jpg"];
 
+var i = 0;
 var f = 0;
 var wcount = 0;
 var lcount = 0;
 var ucount = 0;
 
 
+ $("#restart").css("display", "none");
 
-  $("#restart").css("display", "none");
    $(".right3").css("display", "none");
 
 
 function ask (f){
 
   if (i === qlist.length){
-    $("#restart").css("display", "inline");
+
+  $("#restart").css("display", "inline");
 $(".right3").css("display", "inline");
 $(".quest").html("<h3>Quiz Complete! Here's how you did: </h3>");
- $(".right").text("You got " + wcount + " questions right!");
- $(".right2").text("You got " + lcount + " questions wrong!");
- $(".right3").text("You had " + ucount + " questions unanswered!");
+ $(".right").text("You got " + wcount + " question(s) right!");
+ $(".right2").text("You got " + lcount + " question(s) wrong!");
+ $(".right3").text("You had " + ucount + " question(s) unanswered!");
 $(".buts").css("display", "none");
 $("#show-number").css("display", "none");
 $("#imgholder").css("display", "none");
+stop();
 
 
 
@@ -108,8 +111,7 @@ $("#imgholder").css("display", "none");
           $(".right3").html("");
          $("#show-number").css("display", "inline");
           $("#start").css("display", "none");
-        $("#show-number").html("<h2> Time Left: " + number + "</h2>");
-        $("#restart").css("display", "none");
+  
         
          f++;
 }
@@ -155,7 +157,7 @@ $("#show-number").css("display", "none");
 $(".right3").css("display", "inline");
 $(".right3").html("Times up!");
 i++;
- ucount++;
+ucount++;
   
 
 var five = setTimeout(fiveSeconds, 5000)
@@ -183,7 +185,7 @@ run();
 
 
  
- var i = 0
+
 
  // for (var i = 0; i < 1; i++) {
 $(".buts").on("click", function(){
@@ -192,8 +194,8 @@ stop();
 $(".quest").html("<h3>The Correct Answer Was: " + answers[i] + "</h3>");
 $(".buts").css("display", "none");
 $("#imgholder").html("<img src=" + (imgs[i]) + ">");
-stop();
 $("#show-number").css("display", "none");
+
 
 if ($(this).attr("value") === answers[i]){
 
@@ -232,6 +234,9 @@ function restart (){
 
 i = 0;
 f = 0;
+wcount = 0;
+lcount = 0;
+ucount = 0;
 ask(f);
 
 }
