@@ -81,7 +81,13 @@ function ask (f){
 
   if (i === qlist.length){
 
-  $("#restart").css("display", "inline");
+     $("#restart").css("display", "inline");
+function stop() {
+  //timer = false;
+    clearInterval(num);
+     }
+stop();
+ 
 $(".right3").css("display", "inline");
 $(".quest").html("<h3>Quiz Complete! Here's how you did: </h3>");
  $(".right").text("You got " + wcount + " question(s) right!");
@@ -90,12 +96,8 @@ $(".quest").html("<h3>Quiz Complete! Here's how you did: </h3>");
 $(".buts").css("display", "none");
 $("#show-number").css("display", "none");
 $("#imgholder").css("display", "none");
-number = 900;
-function stop() {
-  //timer = false;
-    clearInterval(num);
-     }
-stop();
+
+
 
 
 
@@ -131,7 +133,7 @@ stop();
         // timer = true;
         ask(f)
         $("#show-number").html("<h2> Time Left: 30</h2>");
-        $("#restart").css("display", "none");
+        
         
 
 
@@ -152,11 +154,15 @@ stop();
 
        if (number === 0) {
 
+function stop() {
+  //timer = false;
+    clearInterval(num);
+     }
+stop();
 $("#imgholder").css("display", "block");
 $(".quest").html("<h3>The Correct Answer Was: " + answers[i] + "</h3>");
 $(".buts").css("display", "none");
 $("#imgholder").html("<img src=" + (imgs[i]) + ">");
-stop();
 $("#show-number").css("display", "none");
 $(".right3").css("display", "inline");
 $(".right3").html("Times up!");
@@ -177,11 +183,6 @@ ask(f);
 
 }
 
-
-
-
- 
-
         stop();
 }
 
@@ -193,7 +194,14 @@ ask(f);
 
  // for (var i = 0; i < 1; i++) {
 $(".buts").on("click", function(){
+
+function stop() {
+  //timer = false;
+    clearInterval(num);
+     }
 stop();
+
+
  $("#imgholder").css("display", "block");
 $(".quest").html("<h3>The Correct Answer Was: " + answers[i] + "</h3>");
 $(".buts").css("display", "none");
@@ -227,6 +235,7 @@ var five = setTimeout(fiveSeconds, 5000)
 function fiveSeconds(){
 
 ask(f);
+run();
 
 }
 
@@ -243,6 +252,7 @@ lcount = 0;
 ucount = 0;
 ask(f);
 run();
+
 $("#restart").css("display", "none");
 }
 
