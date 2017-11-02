@@ -238,7 +238,7 @@ wcount = 0;
 lcount = 0;
 ucount = 0;
 ask(f);
-
+$("#restart").css("display", "none");
 }
 
 $("#restart").click(restart);
