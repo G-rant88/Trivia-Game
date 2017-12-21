@@ -3,7 +3,7 @@
 
 <h2>Features</h2>
 <ul>
-  <li>answer trivia questions</li>
+  <li>answer timed trivia questions by clicking on multiple choice options</li>
   <li>displays whether you are correct or not, and the correct answer</li>
   <li>displays how many correct/incorrect answers you had upon completing quiz.</li>
   <li>Allows you to restart quiz at the end.</li>
