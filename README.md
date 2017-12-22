@@ -8,3 +8,7 @@
   <li>displays how many correct/incorrect answers you had upon completing quiz.</li>
   <li>Allows you to restart quiz at the end.</li>
   </ul>
+
+<img src="https://media.giphy.com/media/xUNd9EWeogyY6r9ooE/giphy.gif" alt="gif">
+full video demo: (https://www.youtube.com/watch?v=Z0JiiNL2yiQ)
+
